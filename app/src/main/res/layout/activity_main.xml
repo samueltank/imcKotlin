@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CALCULADORA IMC"
+        android:textSize="34sp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginBottom="34dp"
+    />
+    <EditText
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:ems="10"
+        android:autoSizeTextType="uniform"
+    />
+    <EditText
+        android:id="@+id/textAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="Altura"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:autoSizeTextType="uniform"
+    />
+    <EditText
+        android:id="@+id/textPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="Peso"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autoSizeTextType="uniform"
+        android:layout_marginBottom="34dp"
+    />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+    >
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="salvar"
+            android:layout_marginRight="15dp"
+        />
+
+        <Button
+            android:id="@+id/btnSair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sair"
+        />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESULTADO"
+        android:textSize="24sp"
+        android:layout_marginTop="15dp"
+        android:autoSizeTextType="uniform"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        android:autoSizeTextType="uniform"
+    />
+
+</LinearLayout>
