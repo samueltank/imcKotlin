@@ -16,6 +16,8 @@
         android:layout_height="wrap_content"
         android:text="CALCULADORA IMC"
         android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="@color/royal_blue"
         android:autoSizeTextType="uniform"
         android:layout_marginBottom="34dp"
     />
@@ -23,7 +25,8 @@
         android:id="@+id/textName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text=""
+        android:hint="Nome"
         android:inputType="text"
         android:minHeight="48dp"
         android:ems="10"
@@ -36,7 +39,8 @@
         android:ems="10"
         android:inputType="number"
         android:minHeight="48dp"
-        android:text="Altura"
+        android:text=""
+        android:hint="Altura"
         tools:ignore="SpeakableTextPresentCheck"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
@@ -49,7 +53,8 @@
         android:ems="10"
         android:inputType="number"
         android:minHeight="48dp"
-        android:text="Peso"
+        android:text=""
+        android:hint="Peso"
         tools:ignore="SpeakableTextPresentCheck"
         android:autoSizeTextType="uniform"
         android:layout_marginBottom="34dp"
@@ -61,16 +66,16 @@
         android:orientation="horizontal"
     >
         <Button
-            android:id="@+id/btnSalvar"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnCalc"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:text="salvar"
+            android:text="Calcular"
             android:layout_marginRight="15dp"
         />
 
         <Button
             android:id="@+id/btnSair"
-            android:layout_width="wrap_content"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:text="sair"
         />
@@ -81,14 +86,18 @@
         android:layout_height="wrap_content"
         android:text="RESULTADO"
         android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/silver"
         android:layout_marginTop="15dp"
         android:autoSizeTextType="uniform"
     />
     <TextView
+        android:id="@+id/areaOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="16sp"
+        android:text="aqui"
+        android:textStyle="italic"
+        android:textSize="20sp"
         android:layout_marginTop="15dp"
         android:autoSizeTextType="uniform"
     />
