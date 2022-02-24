@@ -1,10 +1,14 @@
 package br.senai.imckotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import java.math.BigDecimal
+import java.math.RoundingMode
+import java.text.DecimalFormat
 import kotlin.math.pow
 
 class MainActivity : AppCompatActivity()
@@ -20,21 +24,32 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
 
         val btnCalcButton = findViewById<Button>(R.id.btnCalc);
-        val btnSairButton = findViewById<Button>(R.id.btnSair).setOnClickListener { finish() };
+        val btnSairButton = findViewById<Button>(R.id.btnSair);
+
+        btnSairButton.setOnClickListener { finish() };
 
         btnCalcButton.setOnClickListener {
             nameEditText       = findViewById(R.id.textName);
             alturaEditText     = findViewById(R.id.textAltura);
             pesoEditText       = findViewById(R.id.textPeso);
-            areaOutputTextView = findViewById(R.id.areaOutput);
 
-            var altura: Double = convertToStringToInt(pesoEditText);
-            var peso: Double   = convertToStringToInt(alturaEditText);
+            var altura: Double = convertToStringToDouble(alturaEditText);
+            var peso: Double   = convertToStringToDouble(pesoEditText);
 
             var imc: Double         = calcImc(peso, altura);
             var classImcTxt: String = classiImc(imc);
 
-            areaOutputTextView.text = classImcTxt;
+            var intent = Intent(this, RelatorioIMC::class.java);
+
+            intent.putExtra("nome", nameEditText.text.toString());
+            intent.putExtra("altura", altura.toString());
+            intent.putExtra("peso", peso.toString());
+            intent.putExtra("imc", formatNum(imc).toString());
+            intent.putExtra("status", classImcTxt);
+
+            startActivity(intent);
+
+//            areaOutputTextView.text = classImcTxt;
         }
     }
 
@@ -43,8 +58,9 @@ class MainActivity : AppCompatActivity()
         return (peso / altura.pow(2));
     }
 
-    private fun classiImc (imc: Double) : String
+    private fun classiImc (imcInput: Double) : String
     {
+        val imc = imcInput;
         var text: String = "";
         if(imc <= 18.5) {
             text = "Você está abaixo do peso";
@@ -62,9 +78,16 @@ class MainActivity : AppCompatActivity()
         return text;
     }
 
-    private fun convertToStringToInt(variable: EditText) : Double
+    private fun convertToStringToDouble(variable: EditText) : Double
     {
-        val vari = variable.text.toString().toDouble();
+        var vari: Double = variable.text.toString().toDouble();
         return vari;
+    }
+
+    private fun formatNum(num: Double) : Double  {
+        val df = DecimalFormat("##.##");
+        df.roundingMode = RoundingMode.HALF_UP;
+        val result = df.format(num).toDouble();
+        return result;
     }
 }

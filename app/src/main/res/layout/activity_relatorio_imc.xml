@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- layout Linear -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelatorioIMC"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RELATÓRIO IMC"
+        android:textSize="42dp"
+        android:textColor="@color/royal_blue"
+        android:textStyle="bold"
+        android:layout_marginBottom="50dp"
+    />
+
+    <!-- container for name -->
+    <LinearLayout style="@style/container">
+        <TextView
+            android:text="Nome:"
+            style="@style/label"
+        />
+        <TextView
+            android:id="@+id/nome"
+            style="@style/input"
+        />
+
+    </LinearLayout>
+
+    <!-- container for heigth -->
+    <LinearLayout style="@style/container">
+        <TextView
+            android:text="Altura:"
+            style="@style/label"
+        />
+        <TextView
+            android:id="@+id/altura"
+            style="@style/input"
+        />
+
+    </LinearLayout>
+
+    <!-- container for peso -->
+    <LinearLayout style="@style/container">
+        <TextView
+            android:text="Peso:"
+            style="@style/label"
+        />
+        <TextView
+            android:id="@+id/peso"
+            style="@style/input"
+        />
+
+    </LinearLayout>
+
+    <!-- container for imc -->
+    <LinearLayout style="@style/container">
+        <TextView
+            android:text="I.M.C:"
+            style="@style/label"
+        />
+        <TextView
+            android:id="@+id/imc"
+            style="@style/input"
+        />
+
+    </LinearLayout>
+
+    <!-- container for status -->
+    <LinearLayout style="@style/container">
+        <TextView
+            android:text="Situação:"
+            style="@style/label"
+        />
+        <TextView
+            android:id="@+id/situacao"
+            style="@style/input"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>
